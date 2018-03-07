@@ -1,12 +1,63 @@
-﻿<Window x:Class="MVPCalculator.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MVPCalculator"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
-</Window>
+﻿<Controls:MetroWindow x:Class="MVPCalculator.MainWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                      xmlns:local="clr-namespace:MVPCalculator"
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      mc:Ignorable="d"
+                      Title="MainWindow" Height="700" Width="400">
+
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="2*" />
+			<RowDefinition Height="5*" />
+		</Grid.RowDefinitions>
+		
+		<Grid Name="Labels">
+			<TextBox Name="LabelOutput" FontSize="20" VerticalAlignment="Bottom" TextAlignment="Right"/>
+
+		</Grid>
+		<Grid Name="Buttons" Row="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1*" />
+				<ColumnDefinition Width="1*" />
+				<ColumnDefinition Width="1*" />
+				<ColumnDefinition Width="1*" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="1*" />
+				<RowDefinition Height="1*" />
+				<RowDefinition Height="1*" />
+				<RowDefinition Height="1*" />
+				<RowDefinition Height="1*" />
+			</Grid.RowDefinitions>
+
+
+			<local:CButton x:Name="Button_Ce" Grid.Column="0" />
+			<local:CButton x:Name="Button_C" Grid.Column="1" />
+			<local:CButton x:Name="Button_Delete" Grid.Column="2" />
+			<local:CButton x:Name="Button_Divide" Grid.Column="3" />
+
+			<local:CButton x:Name="Button_7" Grid.Row="1" Grid.Column="0" />
+			<local:CButton x:Name="Button_8" Grid.Row="1" Grid.Column="1" />
+			<local:CButton x:Name="Button_9" Grid.Row="1" Grid.Column="2" />
+			<local:CButton x:Name="Button_Multiply" Grid.Row="1" Grid.Column="3" />
+
+			<local:CButton x:Name="Button_4" Grid.Row="2" Grid.Column="0" />
+			<local:CButton x:Name="Button_5" Grid.Row="2" Grid.Column="1" />
+			<local:CButton x:Name="Button_6" Grid.Row="2" Grid.Column="2" />
+			<local:CButton x:Name="Button_Minus" Grid.Row="2" Grid.Column="3" />
+
+			<local:CButton x:Name="Button_1" Grid.Row="3" Grid.Column="0" />
+			<local:CButton x:Name="Button_2" Grid.Row="3" Grid.Column="1" />
+			<local:CButton x:Name="Button_3" Grid.Row="3" Grid.Column="2" />
+			<local:CButton x:Name="Button_Addition" Grid.Row="3" Grid.Column="3" />
+
+			<local:CButton x:Name="Button_0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" />
+			<local:CButton x:Name="Button_Dot" Grid.Row="4" Grid.Column="2" />
+			<local:CButton x:Name="Button_Equals" Grid.Row="4" Grid.Column="3" />
+
+		</Grid>
+	</Grid>
+</Controls:MetroWindow>

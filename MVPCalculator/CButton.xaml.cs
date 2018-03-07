@@ -12,21 +12,23 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using org.mariuszgromada.math.mxparser;
 
 namespace MVPCalculator
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for CButton.xaml
     /// </summary>
-    public partial class MainWindow
+    public partial class CButton : UserControl
     {
-        public MainWindow()
+        public CButton()
         {
             InitializeComponent();
-            
+            Button.MouseDown += Button_MouseDown;
         }
 
-       
+        private void Button_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

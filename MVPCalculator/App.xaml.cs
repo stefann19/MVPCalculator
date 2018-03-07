@@ -13,5 +13,15 @@ namespace MVPCalculator
     /// </summary>
     public partial class App : Application
     {
+        private Controller controller;
+        public App()
+        {
+            controller = new Controller();
+        }
+
+        public App(bool contentLoaded):this()
+        {
+            _contentLoaded = contentLoaded;
+        }
     }
 }
