@@ -23,12 +23,7 @@ namespace MVPCalculator
         public CButton()
         {
             InitializeComponent();
-            Button.MouseDown += Button_MouseDown;
         }
 
-        private void Button_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

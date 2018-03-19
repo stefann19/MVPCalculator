@@ -10,15 +10,39 @@
 
 	<Grid>
 		<Grid.RowDefinitions>
-			<RowDefinition Height="2*" />
+			<RowDefinition Height="0.3*" />
+			<RowDefinition Height="1.4*" />
+			<RowDefinition Height="0.3*" />
 			<RowDefinition Height="5*" />
 		</Grid.RowDefinitions>
-		
-		<Grid Name="Labels">
-			<TextBox Name="LabelOutput" FontSize="20" VerticalAlignment="Bottom" TextAlignment="Right"/>
 
-		</Grid>
-		<Grid Name="Buttons" Row="1">
+		<StackPanel VerticalAlignment="Top" Grid.Row="0">
+			<Menu Width="Auto" Height="Auto">
+				<MenuItem Header="_File">
+					<MenuItem x:Name="AppExit" Header="Exit" HorizontalAlignment="Left" Width="140" />
+				</MenuItem>
+				<MenuItem Header="_Tools">
+					<MenuItem x:Name="Options" Header="Options" HorizontalAlignment="Left" Width="140"/>
+				</MenuItem>
+				<MenuItem Header="_Help">
+					<MenuItem x:Name="About" Header="About" HorizontalAlignment="Left" Width="140"/>
+				</MenuItem>
+			</Menu>
+		</StackPanel>
+
+		
+
+		<ListView Name="ListView" Grid.Row="1" VerticalContentAlignment="Bottom">
+			<ListView.ItemsPanel>
+				<ItemsPanelTemplate>
+					<VirtualizingStackPanel VerticalAlignment="Bottom"/>
+				</ItemsPanelTemplate>
+			</ListView.ItemsPanel>
+		</ListView>
+		<TextBox Grid.Row="2" Name="LabelOutput" FontSize="20" VerticalAlignment="Bottom" TextAlignment="Right"/>
+		
+		
+		<Grid Name="Buttons" Row="3">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="1*" />
 				<ColumnDefinition Width="1*" />
@@ -32,6 +56,7 @@
 				<RowDefinition Height="1*" />
 				<RowDefinition Height="1*" />
 			</Grid.RowDefinitions>
+
 
 
 			<local:CButton x:Name="Button_Ce" Grid.Column="0" />

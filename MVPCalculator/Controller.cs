@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace MVPCalculator
 {
@@ -22,7 +23,6 @@ namespace MVPCalculator
             AddAssesFunctionality();
             AddBasicButtonsFunctionlity();
             AddDeleteFunctionality();
-
 
         }
 
@@ -70,6 +70,9 @@ namespace MVPCalculator
 
             void AssesExpresion()
             {
+                Label label = new Label{Content = MainWindow.LabelOutput.Text,HorizontalAlignment = HorizontalAlignment.Right,Foreground = Brushes.CadetBlue};
+
+                MainWindow.ListView.Items.Add(label);
                 MainWindow.LabelOutput.Text = new org.mariuszgromada.math.mxparser.Expression(MainWindow.LabelOutput.Text).calculate().ToString();
                 MainWindow.LabelOutput.CaretIndex = MainWindow.LabelOutput.Text.Length;
             }
