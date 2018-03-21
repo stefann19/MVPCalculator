@@ -6,9 +6,14 @@
                       xmlns:local="clr-namespace:MVPCalculator"
                       xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       mc:Ignorable="d"
-                      Title="MainWindow" Height="700" Width="400">
+                      Title="MainWindow" Height="700" Width="700" ResizeMode="CanMinimize">
 
 	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="4*"/>
+			<ColumnDefinition Width="3*"/>
+		</Grid.ColumnDefinitions>
+
 		<Grid.RowDefinitions>
 			<RowDefinition Height="0.3*" />
 			<RowDefinition Height="1.4*" />
@@ -16,7 +21,7 @@
 			<RowDefinition Height="5*" />
 		</Grid.RowDefinitions>
 
-		<StackPanel VerticalAlignment="Top" Grid.Row="0">
+		<StackPanel VerticalAlignment="Top" Grid.Row="0" Grid.ColumnSpan="1" Margin="0,0,-0.4,0" Grid.RowSpan="2">
 			<Menu Width="Auto" Height="Auto">
 				<MenuItem Header="_File">
 					<MenuItem x:Name="AppExit" Header="Exit" HorizontalAlignment="Left" Width="140" />
@@ -30,20 +35,14 @@
 			</Menu>
 		</StackPanel>
 
-		
 
-		<ListView Name="ListView" Grid.Row="1" VerticalContentAlignment="Bottom">
-			<ListView.ItemsPanel>
-				<ItemsPanelTemplate>
-					<VirtualizingStackPanel VerticalAlignment="Bottom"/>
-				</ItemsPanelTemplate>
-			</ListView.ItemsPanel>
-		</ListView>
-		<TextBox Grid.Row="2" Name="LabelOutput" FontSize="20" VerticalAlignment="Bottom" TextAlignment="Right"/>
-		
-		
-		<Grid Name="Buttons" Row="3">
+
+		<TextBlock Name="IntermediaryResults" Grid.Row="1" VerticalAlignment="Bottom" Grid.ColumnSpan="1" Margin="0,0.2,-0.4,0.4" HorizontalAlignment="Right"></TextBlock>
+		<TextBlock Grid.Row="2" Name="LabelOutput" FontSize="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Column="0" Margin="0,0,-0.4,478.4" Grid.RowSpan="2"/>
+
+		<Grid Name="Buttons" Grid.Row="2" Grid.ColumnSpan="1" Margin="0,28.6,-0.4,0.4" Grid.RowSpan="2">
 			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1*" />
 				<ColumnDefinition Width="1*" />
 				<ColumnDefinition Width="1*" />
 				<ColumnDefinition Width="1*" />
@@ -58,31 +57,51 @@
 			</Grid.RowDefinitions>
 
 
+			<local:CButton x:Name="Button_Module" Grid.Column="0" />
+			<local:CButton x:Name="Button_Ce" Grid.Column="1" />
+			<local:CButton x:Name="Button_C" Grid.Column="2" />
+			<local:CButton x:Name="Button_Delete" Grid.Column="3" />
+			<local:CButton x:Name="Button_Divide" Grid.Column="4" />
 
-			<local:CButton x:Name="Button_Ce" Grid.Column="0" />
-			<local:CButton x:Name="Button_C" Grid.Column="1" />
-			<local:CButton x:Name="Button_Delete" Grid.Column="2" />
-			<local:CButton x:Name="Button_Divide" Grid.Column="3" />
+			<local:CButton x:Name="Button_Root"  Grid.Row="1" Grid.Column="0" />
+			<local:CButton x:Name="Button_7" Grid.Row="1" Grid.Column="1" />
+			<local:CButton x:Name="Button_8" Grid.Row="1" Grid.Column="2" />
+			<local:CButton x:Name="Button_9" Grid.Row="1" Grid.Column="3" />
+			<local:CButton x:Name="Button_Multiply" Grid.Row="1" Grid.Column="4" />
 
-			<local:CButton x:Name="Button_7" Grid.Row="1" Grid.Column="0" />
-			<local:CButton x:Name="Button_8" Grid.Row="1" Grid.Column="1" />
-			<local:CButton x:Name="Button_9" Grid.Row="1" Grid.Column="2" />
-			<local:CButton x:Name="Button_Multiply" Grid.Row="1" Grid.Column="3" />
+			<local:CButton x:Name="Button_Square"  Grid.Row="2" Grid.Column="0" />
+			<local:CButton x:Name="Button_4" Grid.Row="2" Grid.Column="1" />
+			<local:CButton x:Name="Button_5" Grid.Row="2" Grid.Column="2" />
+			<local:CButton x:Name="Button_6" Grid.Row="2" Grid.Column="3" />
+			<local:CButton x:Name="Button_Minus" Grid.Row="2" Grid.Column="4" />
 
-			<local:CButton x:Name="Button_4" Grid.Row="2" Grid.Column="0" />
-			<local:CButton x:Name="Button_5" Grid.Row="2" Grid.Column="1" />
-			<local:CButton x:Name="Button_6" Grid.Row="2" Grid.Column="2" />
-			<local:CButton x:Name="Button_Minus" Grid.Row="2" Grid.Column="3" />
+			<local:CButton x:Name="Button_Cube"  Grid.Row="3" Grid.Column="0" />
+			<local:CButton x:Name="Button_1" Grid.Row="3" Grid.Column="1" />
+			<local:CButton x:Name="Button_2" Grid.Row="3" Grid.Column="2" />
+			<local:CButton x:Name="Button_3" Grid.Row="3" Grid.Column="3" />
+			<local:CButton x:Name="Button_Addition" Grid.Row="3" Grid.Column="4" />
 
-			<local:CButton x:Name="Button_1" Grid.Row="3" Grid.Column="0" />
-			<local:CButton x:Name="Button_2" Grid.Row="3" Grid.Column="1" />
-			<local:CButton x:Name="Button_3" Grid.Row="3" Grid.Column="2" />
-			<local:CButton x:Name="Button_Addition" Grid.Row="3" Grid.Column="3" />
-
-			<local:CButton x:Name="Button_0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" />
-			<local:CButton x:Name="Button_Dot" Grid.Row="4" Grid.Column="2" />
-			<local:CButton x:Name="Button_Equals" Grid.Row="4" Grid.Column="3" />
+			<local:CButton x:Name="Button_Reverse"  Grid.Row="4" Grid.Column="0" />
+			<local:CButton x:Name="Button_PlusMinus"  Grid.Row="4" Grid.Column="1" />
+			<local:CButton x:Name="Button_0" Grid.Row="4" Grid.Column="2" />
+			<local:CButton x:Name="Button_Dot" Grid.Row="4" Grid.Column="3" />
+			<local:CButton x:Name="Button_Equals" Grid.Row="4" Grid.Column="4" />
 
 		</Grid>
+
+		<StackPanel Grid.Column="1" Grid.RowSpan="4">
+		<StackPanel Orientation="Horizontal" Grid.Column="1" >
+			<TextBlock Padding="7" Text="History"></TextBlock>
+			<TextBlock Padding="7" Text="Memory"></TextBlock>
+		</StackPanel>
+			<ListView Name="ListView" Grid.Row="1" VerticalContentAlignment="Bottom" Grid.ColumnSpan="1" Margin="0,0.2,-0.4,0.4">
+				<ListView.ItemsPanel>
+					<ItemsPanelTemplate>
+						<VirtualizingStackPanel VerticalAlignment="Bottom"/>
+					</ItemsPanelTemplate>
+				</ListView.ItemsPanel>
+			</ListView>
+		</StackPanel>
+
 	</Grid>
 </Controls:MetroWindow>

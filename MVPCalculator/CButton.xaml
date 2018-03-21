@@ -7,9 +7,7 @@
              xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
-	<Grid>
-		<Button Style="{DynamicResource SquareButtonStyle}" Name="Button" Content="0" FontFamily="Consolas" FontSize="20" Margin="2" BorderBrush="{x:Null}" Background="#FF3F3F3F" >
-		</Button>
-	</Grid>
+	<Button Style="{DynamicResource SquareButtonStyle}" Name="Button" Content="0" FontFamily="Consolas" FontSize="20" Margin="2" BorderBrush="{x:Null}" Background="#FF3F3F3F" >
+	</Button>
 </UserControl>
 

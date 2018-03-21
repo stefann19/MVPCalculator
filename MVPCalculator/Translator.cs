@@ -13,7 +13,10 @@ namespace MVPCalculator
             {"Minus","-"},{"Addition","+"}
             ,{"Multiply","*"},{"Divide","/"}
             ,{"Dot","."},{"Equals","="}
-            ,{"Delete","<-"}
+            ,{"Delete","<-"},{"Module","%"}
+            ,{"Root","√"},{"Square","²"}
+            ,{"Cube","³"},{"Reverse","<-"}
+            ,{"PlusMinus","±"}
         };
 
     }
